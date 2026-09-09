@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChopNow - Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Paystack Payment Integration -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Chop<span>Now</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#favorites">
+                ❤️ Favorites <span id="favorites-count">0</span>
+                </a>
+            </li>
+        </ul>
+
+        <button class="cart-btn">
+            🛒 <span id="cart-count">0</span>
+        </button>
+
+        
+
+        <button id="theme-toggle" class="theme-toggle" type="button">
+            🌙
+        </button>
+
+        <button class="profile-btn" id="profile-btn" title="Customer Profile">
+        👤
+        </button>
+
+
+        
+        <button class="order-btn">
+            Order Now
+        </button>
+
+        <button class="menu-btn">☰</button>
+
+
+    </nav>
+
+    
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                FAST & FRESH DELIVERY 🚀
+            </p>
+
+            <h1>
+                Delicious food,<br>
+                <span>delivered</span> to you.
+            </h1>
+
+            <p class="description">
+                Enjoy your favorite meals from the comfort of your home.
+                Fresh, tasty and delivered straight to your doorstep.
+            </p>
+
+            <button class="hero-btn">
+                Explore Menu
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800"
+                alt="Delicious pizza"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>
+                What are you craving?
+            </h2>
+
+        </div>
+
+
+        <div class="category-container">
+
+            <button
+                class="category active"
+                data-category="all"
+            >
+                🍽️
+                <span>All</span>
+            </button>
+
+
+            <button
+                class="category"
+                data-category="pizza"
+            >
+                🍕
+                <span>Pizza</span>
+            </button>
+
+
+            <button
+                class="category"
+                data-category="burger"
+            >
+                🍔
+                <span>Burgers</span>
+            </button>
+
+
+            <button
+                class="category"
+                data-category="chicken"
+            >
+                🍗
+                <span>Chicken</span>
+            </button>
+
+
+            <button
+                class="category"
+                data-category="pasta"
+            >
+                🍝
+                <span>Pasta</span>
+            </button>
+
+
+            <button
+                class="category"
+                data-category="drinks"
+            >
+                🥤
+                <span>Drinks</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="popular" id="menu">
+
+        <div class="section-heading">
+
+            <p>OUR MENU</p>
+
+            <h2>
+                Popular Dishes
+            </h2>
+
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="food-search"
+                placeholder="Search for food..."
+            >
+        </div>  
+
+
+        <div class="food-container">
+
+
+
+
+            <!-- Pepperoni Pizza -->
+
+            <div
+                class="food-card"
+                data-category="pizza"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600"
+                    alt="Pepperoni Pizza"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Pepperoni Pizza
+                    </h3>
+
+                    <p>
+                        Cheesy pizza topped with delicious pepperoni.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦8,500
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Classic Burger -->
+
+            <div
+                class="food-card"
+                data-category="burger"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600"
+                    alt="Classic Burger"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Classic Burger
+                    </h3>
+
+                    <p>
+                        Juicy beef burger with fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦6,000
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Crispy Chicken -->
+
+            <div
+                class="food-card"
+                data-category="chicken"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600"
+                    alt="Crispy Chicken"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Crispy Chicken
+                    </h3>
+
+                    <p>
+                        Golden crispy chicken served hot and fresh.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦7,500
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Creamy Pasta -->
+
+            <div
+                class="food-card"
+                data-category="pasta"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600"
+                    alt="Creamy Pasta"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Creamy Pasta
+                    </h3>
+
+                    <p>
+                        Rich and creamy pasta with fresh herbs.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦7,000
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="food-card" data-category="rice">
+            <button class="favorite-btn" type="button">♡</button>
+    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Jollof Rice">
+
+    <div class="food-info">
+
+        <h3>Special Jollof Rice</h3>
+
+        <p>
+            Delicious smoky jollof rice served with tender chicken
+            and fresh vegetables.
+        </p>
+
+        <div class="food-bottom">
+
+            <strong>₦4,500</strong>
+
+            <button type="button">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- Spicy Chicken Wings -->
+
+            <div
+                class="food-card"
+                data-category="chicken"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=600"
+                    alt="Spicy Chicken Wings"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Spicy Chicken Wings
+                    </h3>
+
+                    <p>
+                        Tender chicken wings coated in a delicious spicy sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦6,500
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Fresh Smoothie -->
+
+            <div
+                class="food-card"
+                data-category="drinks"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600"
+                    alt="Fresh Smoothie"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Fresh Smoothie
+                    </h3>
+
+                    <p>
+                        Cold and refreshing fruit smoothie.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦3,500
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cheese Pizza -->
+
+            <div
+                class="food-card"
+                data-category="pizza"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600"
+                    alt="Cheese Pizza"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Cheese Pizza
+                    </h3>
+
+                    <p>
+                        Loaded with melted cheese and fresh toppings.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦7,500
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Double Beef Burger -->
+
+            <div
+                class="food-card"
+                data-category="burger"
+            >
+            <button class="favorite-btn" type="button">♡</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600"
+                    alt="Double Beef Burger"
+                >
+
+                <div class="food-info">
+
+                    <h3>
+                        Double Beef Burger
+                    </h3>
+
+                    <p>
+                        Double beef patties with cheese and fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            ₦8,000
+                        </strong>
+
+                        <button>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ===============================
+     FAVORITES SECTION
+================================ -->
+
+<section class="favorites-section" id="favorites">
+
+    <div class="section-heading">
+        <p>YOUR PICKS</p>
+        <h2>My Favorites ❤️</h2>
+    </div>
+
+    <div class="favorites-container" id="favorites-container">
+
+        <p class="no-favorites">
+            You haven't added any favorites yet.
+        </p>
+
+    </div>
+
+</section>
+<!-- ===============================
+     ORDER HISTORY
+================================ -->
+
+<section class="orders-section" id="orders">
+
+    <div class="section-heading">
+        <p>YOUR ORDERS</p>
+        <h2>Order History 🧾</h2>
+    </div>
+
+    <div class="orders-container" id="orders-container">
+
+        <p class="no-orders">
+            You haven't placed any orders yet.
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+    <section
+        class="how-it-works"
+        id="about"
+    >
+
+        <div class="section-heading">
+
+            <p>
+                HOW IT WORKS
+            </p>
+
+            <h2>
+                Order in 3 simple steps
+            </h2>
+
+        </div>
+
+
+        <div class="steps-container">
+
+
+            <div class="step">
+
+                <div class="step-icon">
+                    🍽️
+                </div>
+
+                <h3>
+                    Choose Your Food
+                </h3>
+
+                <p>
+                    Browse our menu and pick your favorite meal.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Add to Cart
+                </h3>
+
+                <p>
+                    Add your favorite dishes and review your order.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-icon">
+                    🚴
+                </div>
+
+                <h3>
+                    Get It Delivered
+                </h3>
+
+                <p>
+                    Place your order and we'll bring it straight to you.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div class="cart-panel">
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button class="close-cart">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div>
+
+                <span>
+                    Total:
+                </span>
+
+                <strong id="cart-total">
+                    ₦0
+                </strong>
+
+            </div>
+
+            <button class="clear-cart-btn" type="button">
+                Clear Cart
+            </button>
+
+            <button class="checkout-btn">
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section
+        class="cta"
+        id="contact"
+    >
+
+        <div class="cta-content">
+
+            <p>
+                HUNGRY?
+            </p>
+
+            <h2>
+                Good food is<br>
+                just a click away.
+            </h2>
+
+            <p>
+                Order your favorite meals and enjoy fast,
+                fresh delivery right to your doorstep.
+            </p>
+
+            <button class="cta-btn">
+                Order Now
+            </button>
+
+        </div>
+
+
+        <div class="cta-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+                alt="Delicious food"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Chop<span>Now</span>
+                </h2>
+
+                <p>
+                    Delicious food, delivered fresh
+                    to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    📞 +234 801 234 5678
+                </p>
+
+                <p>
+                    📧 hello@chopnow.com
+                </p>
+
+                <p>
+                    📍 Lagos, Nigeria
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ChopNow. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         CHECKOUT MODAL
+    ========================== -->
+
+    <div class="checkout-modal">
+
+        <div class="checkout-box">
+
+            <button class="close-checkout">
+                &times;
+            </button>
+
+            
+            <h2>
+                Checkout
+            </h2>
+
+            <p>
+                Complete your order below.
+            </p>
+
+            <div class="checkout-summary">
+    <h3>Order Summary</h3>
+
+    <div id="checkout-items"></div>
+
+        <div class="checkout-summary-total">
+            <span>Total</span>
+            <strong id="checkout-total">₦0</strong>
+        </div>
+    </div>
+
+            <form class="checkout-form">
+
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="08012345678"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="your.email@example.com"
+                    required
+                >
+
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your delivery address"
+                    required
+                ></textarea>
+
+
+                <label for="payment">
+                    Payment Method
+                </label>
+
+                <select
+                    id="payment"
+                    required
+                >
+
+                    <option value="">
+                        Select payment method
+                    </option>
+
+                    <option value="cash">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="paystack">
+                        Paystack Card Payment
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    class="place-order-btn"
+                >
+                    Place Order
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ORDER SUCCESS MODAL
+    ========================== -->
+
+    <div class="success-modal">
+
+        <div class="success-box">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Order Confirmed!
+            </h2>
+
+            <p>
+                Your food is being prepared
+                and will be delivered soon.
+            </p>
+
+            <div class="order-number">
+                Order #<span id="success-order-number">---</span>
+            </div>
+
+            <button class="back-menu-btn">
+                Back to Menu
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ===============================
+     ORDER TRACKING MODAL
+=============================== -->
+
+<div class="tracking-modal">
+
+    <div class="tracking-box">
+
+        <button class="close-tracking" type="button">
+            ×
+        </button>
+
+        <h2>Track Your Order</h2>
+
+        <p class="tracking-order-number">
+            Order <strong id="tracking-order-number">ORD-000000</strong>
+        </p>
+        <div class="tracking-status">
+
+            <div class="tracking-step active">
+                <div class="tracking-dot">✓</div>
+
+                <div>
+                    <h3>Order Received</h3>
+                    <p>We've received your order.</p>
+                </div>
+            </div>
+
+
+            <div class="tracking-line"></div>
+
+
+            <div class="tracking-step">
+                <div class="tracking-dot">2</div>
+
+                <div>
+                    <h3>Preparing</h3>
+                    <p>Your food is being prepared.</p>
+                </div>
+            </div>
+
+
+            <div class="tracking-line"></div>
+
+
+            <div class="tracking-step">
+                <div class="tracking-dot">3</div>
+
+                <div>
+                    <h3>Out for Delivery</h3>
+                    <p>Your order is on its way.</p>
+                </div>
+            </div>
+
+
+            <div class="tracking-line"></div>
+
+
+            <div class="tracking-step">
+                <div class="tracking-dot">4</div>
+
+                <div>
+                    <h3>Delivered</h3>
+                    <p >Your order has been delivered.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ===============================
+     CUSTOMER PROFILE MODAL
+================================ -->
+
+<div class="profile-modal" id="profile-modal">
+
+    <div class="profile-box">
+
+        <button class="close-profile" id="close-profile">
+            &times;
+        </button>
+
+        <h2 id="customer-name">My Profile</h2>
+        <p class="profile-subtitle">
+            Manage your personal information
+        </p>
+
+        <form id="profile-form">
+
+            <label for="profile-name">Full Name</label>
+            <input
+                type="text"
+                id="profile-name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="profile-email">Email Address</label>
+            <input
+                type="email"
+                id="profile-email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="profile-phone">Phone Number</label>
+            <input
+                type="tel"
+                id="profile-phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+            <label for="profile-address">Delivery Address</label>
+            <textarea
+                id="profile-address"
+                placeholder="Enter your delivery address"
+                required
+            ></textarea>
+
+            <button type="submit" class="save-profile-btn">
+                Save Profile
+            </button>
+
+        </form>
+
+        <div class="profile-stats">
+
+            <div>
+                <strong id="profile-orders-count">0</strong>
+                <span>Orders</span>
+            </div>
+
+            <div>
+                <strong id="profile-favorites-count">0</strong>
+                <span>Favorites</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- =========================
+         JAVASCRIPT
+   ;     ========================== -->
+
+   <script src="https://js.paystack.co/v2/inline.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
